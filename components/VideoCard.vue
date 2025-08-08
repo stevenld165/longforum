@@ -31,21 +31,21 @@ const durationString = computed(() => {
 
 <template>
 <div class="max-w-64 flex flex-col">
-  <div v-if="showRating" class="flex gap-1 items-center" :style="{color: review.rating !== 0 ? 'var(--red-color)' : 'var(--peach-color)'}">
+  <div v-if="showRating" class="flex gap-1 items-center" :style="{color: review.burgers !== 0 ? 'var(--red-color)' : 'var(--peach-color)'}">
     <div class="max-h-min">
-      <template v-for="n in review.rating">
+      <template v-for="n in review.burgers">
         <Icon
-            v-if="!(n % 2 != 0 && n < review.rating)"
+            v-if="!(n % 2 != 0 && n < review.burgers)"
             :name="(n % 2 == 0) ? 'ph:hamburger-fill' : 'ph:hamburger-light'"/>
       </template>
       <Icon
-          v-if="review.rating == 0"
+          v-if="review.burgers == 0"
           name="ph:hamburger-light"/>
     </div>
-    <span v-if="review.review.length > 0 || review.isLiked">|</span>
+    <span v-if="review.reviewText.length > 0 || review.isLiked">|</span>
     <div>
       <Icon
-          v-if="review.review.length > 0"
+          v-if="review.reviewText.length > 0"
           name="ph:chat-fill"/>
       <Icon
           v-if="review.isLiked"
@@ -53,13 +53,13 @@ const durationString = computed(() => {
     </div>
 
   </div>
-  <span v-else class="" style="color: var(--dark-red-color)">{{ review.video.creator }}</span>
-  <div class="flex flex-col items-end max-w-fit mb-4">
+  <span v-else class="" style="color: var(--dark-red-color)">{{ review.video.creatorName }}</span>
+  <div class="video-card-hover flex flex-col items-end max-w-fit mb-4">
     <NuxtImg class="w-64 rounded-2xl" :src="review.video.thumbnail"/>
     <div class="text-(--white-color) max-w-fit py-1 px-4 rounded-xl -mt-11 mr-2" :class="durationClass">{{ durationString }}</div>
   </div>
   <span class="text-lg font-medium">{{ review.video.title }}</span>
-  <span v-if="showRating" class="text-sm" style="color: var(--dark-red-color)">{{ review.video.creator }}</span>
+  <span v-if="showRating" class="text-sm" style="color: var(--dark-red-color)">{{ review.video.creatorName }}</span>
 </div>
 </template>
 
@@ -83,5 +83,14 @@ img {
 
 .duration-superlong {
   background-color: var(--red-color);
+}
+
+.video-card-hover img{
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.video-card-hover img:hover {
+  box-shadow: 0 5px 15px -8px rgba(0,0,0,0.5);
 }
 </style>

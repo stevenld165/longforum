@@ -2,18 +2,32 @@ export {Video, Review}
 
 declare global {
     interface Video {
+        id: number,
         title: string,
-        creator: string,
+        creatorName: string,
         duration: number,
         link: string,
         thumbnail: string
     }
 
     interface Review {
+        id: number,
         video: Video,
-        rating: number,
+        burgers?: number,
         isLiked: boolean,
-        review: string,
-        tags: string[]
+        reviewText: string,
+        tags: string[],
+        date: Date,
+        createdBy: User
+    }
+
+    interface User {
+        id: number,
+        username: string,
+        displayName: string,
+        profilePic: string,
+        bio: string,
+        recentReviews?: Review[],
+        favorites?: Review[],
     }
 }

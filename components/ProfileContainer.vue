@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import {ref} from "vue";
 import type {MenuItem} from "primevue/menuitem";
 
 const items = ["profile", "something"]
@@ -7,56 +6,60 @@ const activeItems = ref(items[0])
 
 const placeholderReview : Review = {
   video: {
+    id: 1,
     title: "The Spectacular Failure of the Star Wars Hotel",
-    creator: "Jenny Nicholson",
+    creatorName: "Jenny Nicholson",
     link: "https://www.youtube.com/watch?v=T0CpOYZZZW4&pp=ygUOamVubnkgbmljb2xzb24%3D",
     thumbnail: "https://i.ytimg.com/vi/T0CpOYZZZW4/hq720.jpg?sqp=-oaymwEnCNAFEJQDSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLCT33gkbK7okjm0feErdOSgo-c6QQ",
     duration: 14735,
   },
-  rating: 9,
-  review: "This was a good use of 4 hours",
+  burgers: 9,
+  reviewText: "This was a good use of 4 hours",
   isLiked: false,
   tags: []
 }
 
 const placeholderReviewShort : Review = {
   video: {
+    id: 2,
     title: "we need more political superheroes",
-    creator: "Making Media Matter",
+    creatorName: "Making Media Matter",
     link: "https://www.youtube.com/watch?v=jXy8sP0Dsgs&pp=ygUid2UgbmVlZCBtb3JlIHBvbGl0aWNhbCBzdXBlcmhlcm9lcw%3D%3D",
     thumbnail: "https://i.ytimg.com/vi/jXy8sP0Dsgs/hq720.jpg?sqp=-oaymwEnCNAFEJQDSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLBkfdZkxZZi552iTWHHsMstZ6XyGw",
     duration: 1183,
   },
-  rating: 10,
-  review: "cool video yay",
+  burgers: 10,
+  reviewText: "cool video yay",
   isLiked: true,
   tags: []
 }
 
 const placeholderReviewLong : Review = {
   video: {
+    id: 3,
     title: "Sleeping Beauty Deserves a Better Ending",
-    creator: "Noralities",
+    creatorName: "Noralities",
     link: "https://www.youtube.com/watch?v=xxy0ZtIFSlk&pp=ygUoc2xlZXBpbmcgYmVhdXR5IGRlc2VydmVzIGEgYmV0dGVyIGVuZGluZw%3D%3D",
     thumbnail: "https://i.ytimg.com/vi/xxy0ZtIFSlk/hq720.jpg?sqp=-oaymwEnCNAFEJQDSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLA6Lqcnh9UNQA4gOnN9CNxRGLRKmw",
     duration: 5173,
   },
-  rating: 10,
-  review: "super intrieging look through the evolution of sleeping beauty and great commentary on the nature of how all fairy tales are big games of telephone through time",
+  burgers: 10,
+  reviewText: "super intrieging look through the evolution of sleeping beauty and great commentary on the nature of how all fairy tales are big games of telephone through time",
   isLiked: true,
   tags: []
 }
 
 const placeholderReviewNothing : Review = {
   video: {
+    id: 4,
     title: "WordGirl Could Beat Superman (and all of fiction) 37 minutes",
-    creator: "Noah Boulter",
+    creatorName: "Noah Boulter",
     link: "https://www.youtube.com/watch?v=qXJuLaXPYnQ",
     thumbnail: "https://i.ytimg.com/vi/qXJuLaXPYnQ/hq720.jpg?sqp=-oaymwEnCNAFEJQDSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLC1SK7Zu97pWzmaDVGgkyOzhpIJkQ",
     duration: 2258,
   },
-  rating: 0,
-  review: "horrible repetitive mess of a video. actually completely loses the rails at the end like bestie...",
+  burgers: 0,
+  reviewText: "horrible repetitive mess of a video. actually completely loses the rails at the end like bestie...",
   isLiked: false,
   tags: []
 }

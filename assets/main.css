@@ -127,3 +127,7 @@ body {
     --p-button-secondary-border-color: var(--white-color);
     --p-button-secondary-hover-border-color: var(--color-yellow-50);
 }
+
+.peach {
+    color: var(--peach-color);
+}
