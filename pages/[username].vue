@@ -31,7 +31,7 @@ onBeforeMount(async () => {
         <template v-if="userData.favorites">
           <h3 class="text-2xl font-semibold mt-10">favorites</h3>
           <div class="flex gap-2">
-            <VideoCard v-for="favorite in userData.favorites" :review="favorite" :show-rating="false"/>
+            <VideoCard v-for="favorite in userData.favorites.reviews" :review="favorite" :show-rating="false"/>
           </div>
         </template>
         <template v-if="userData.recentReviews">

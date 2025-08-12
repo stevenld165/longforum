@@ -1,4 +1,6 @@
-export {Video, Review}
+import type {ListType} from "~/enums/ListType";
+
+export type {Video, Review}
 
 declare global {
     interface Video {
@@ -28,6 +30,16 @@ declare global {
         profilePic: string,
         bio: string,
         recentReviews?: Review[],
-        favorites?: Review[],
+        favorites?: List
+    }
+
+    interface List {
+        id: number,
+        name: string,
+        description: string,
+        type: ListType,
+        tags: string[],
+        userId: number,
+        reviews: Review[]
     }
 }
