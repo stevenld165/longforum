@@ -37,6 +37,9 @@ export default defineNuxtConfig({
         preset: MyPreset,
         darkModeSelector: '.dark-mode'
       },
+    },
+    directives: {
+      include: ['Tooltip'] // Include the Tooltip directive
     }
   }
 })
